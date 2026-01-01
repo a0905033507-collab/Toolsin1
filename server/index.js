@@ -27,7 +27,8 @@ cron.schedule('0 2 * * 0', async () => {
 });
 
 // 启动服务器
-app.listen(PORT, () => {
-  console.log(`服务器运行在 http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`服务器运行在 http://0.0.0.0:${PORT}`);
+  console.log(`可通过 http://localhost:${PORT} 访问`);
   console.log('网站整合工具已启动！');
 });
