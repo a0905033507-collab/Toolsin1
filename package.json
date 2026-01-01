@@ -1,0 +1,24 @@
+{
+  "name": "website-aggregator",
+  "version": "1.0.0",
+  "description": "一个智能的网站整合与管理工具",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "keywords": ["website", "aggregator", "bookmark", "manager"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "node-cron": "^3.0.3",
+    "string-similarity": "^4.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

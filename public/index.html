@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站整合工具 - Website Aggregator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header>
+            <h1>🔖 网站整合工具</h1>
+            <p class="subtitle">智能管理和分类你的常用网站</p>
+        </header>
+
+        <!-- 添加网站表单 -->
+        <section class="add-section">
+            <div class="input-group">
+                <input
+                    type="url"
+                    id="urlInput"
+                    placeholder="输入网址 (例如: https://www.google.com)"
+                    required
+                />
+                <input
+                    type="text"
+                    id="nameInput"
+                    placeholder="网站名称 (可选)"
+                />
+                <button id="addBtn" class="btn btn-primary">添加网站</button>
+            </div>
+        </section>
+
+        <!-- 相似度建议通知 -->
+        <div id="suggestionAlert" class="alert alert-info" style="display: none;">
+            <span id="suggestionCount">0</span> 个相似网站建议待处理
+            <button id="viewSuggestionsBtn" class="btn btn-sm">查看建议</button>
+        </div>
+
+        <!-- 分类筛选 -->
+        <section class="filter-section">
+            <div class="filter-controls">
+                <label>筛选分类：</label>
+                <select id="categoryFilter">
+                    <option value="all">全部分类</option>
+                </select>
+                <button id="refreshBtn" class="btn btn-secondary">刷新</button>
+            </div>
+        </section>
+
+        <!-- 网站展示区域 -->
+        <section class="websites-section">
+            <div id="websitesContainer" class="websites-grid">
+                <!-- 网站卡片将动态插入这里 -->
+            </div>
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <p>还没有添加任何网站</p>
+                <p>在上方输入框中添加你的第一个网站吧！</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 相似度建议模态框 -->
+    <div id="suggestionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>相似网站建议</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body" id="suggestionsContainer">
+                <!-- 建议将动态插入这里 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 加载提示 -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>处理中...</p>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
